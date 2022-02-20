@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Fuvarok {
@@ -35,6 +36,18 @@ public class Fuvarok {
 
     public long getUtazasokSzama() {
         return fuvarok.stream().count();
+    }
+
+    public double getOsszesMerfold() {
+        return fuvarok.stream()
+                .mapToDouble(F -> F.getTavolsag())
+                .sum();
+    }
+
+    public Fuvar getLeghosszabbFuvar() {
+        return fuvarok.stream()
+                .max(Comparator.comparing(fuvar -> fuvar.getIdotartam()))
+                .get();
     }
 
     @Override

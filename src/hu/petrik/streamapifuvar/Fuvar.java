@@ -81,7 +81,7 @@ public class Fuvar {
 
     @Override
     public String toString() {
-        return String.format("%10s %10d %9d %10f %10f %10f %15s", this.idotartam, this.taxiId,
+        return String.format("%10s %10d %9d %10f %10f %10f %15s", this.indulas, this.taxiId,
                 this.idotartam, this.tavolsag, this.viteldij, this.borravalo, this.fizetesModja);
     }
 

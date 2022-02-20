@@ -1,10 +1,11 @@
 package hu.petrik.streamapifuvar;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Fuvar {
     private int taxiId;
-    private LocalDateTime indulas;
+    private String indulas;
     private int idotartam;
     private double tavolsag;
     private double viteldij;
@@ -19,11 +20,11 @@ public class Fuvar {
         this.taxiId = taxiId;
     }
 
-    public LocalDateTime getIndulas() {
+    public String getIndulas() {
         return indulas;
     }
 
-    public void setIndulas(LocalDateTime indulas) {
+    public void setIndulas(String indulas) {
         this.indulas = indulas;
     }
 
@@ -70,17 +71,17 @@ public class Fuvar {
     public Fuvar(String s) {
         String[] adatok = s.split(";");
         this.taxiId = Integer.parseInt(adatok[0]);
-        this.indulas = LocalDateTime.parse(adatok[1]);
+        this.indulas = adatok[1];
         this.idotartam = Integer.parseInt(adatok[2]);
-        this.tavolsag = Double.parseDouble(adatok[3]);
-        this.viteldij = Double.parseDouble(adatok[4]);
-        this.borravalo = Double.parseDouble(adatok[5]);
+        this.tavolsag = Double.parseDouble(adatok[3].replace(',', '.'));
+        this.viteldij = Double.parseDouble(adatok[4].replace(',', '.'));
+        this.borravalo = Double.parseDouble(adatok[5].replace(',', '.'));
         this.fizetesModja = adatok[6];
     }
 
     @Override
     public String toString() {
-        return String.format("%44s %-10d %9d %10f %10f %10f %20s", this.idotartam, this.taxiId,
+        return String.format("%10s %10d %9d %10f %10f %10f %15s", this.idotartam, this.taxiId,
                 this.idotartam, this.tavolsag, this.viteldij, this.borravalo, this.fizetesModja);
     }
 

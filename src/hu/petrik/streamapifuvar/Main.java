@@ -14,6 +14,8 @@ public class Main {
         System.out.println("4. feladat: Az időben leghosszabb fuvar adatai: " + fuvarok.getLeghosszabbFuvar());
         System.out.println("5. feladat: A legbőkezűbb fuvar adatai: " + fuvarok.getLegbokezubbFuvar());
         System.out.println("6. feladat: A 4261-es azonosítójú taxis megtett kilométereinek száma: " + fuvarok.getKilometerekSzamaIdAlapjan(4261));
+        System.out.printf("7. feladat: Hibás adatok száma: %d, összes időtartama: %d , teljes bevétele: %f \n",fuvarok.getHibasakSzama(),
+                fuvarok.getHibasakOsszesIdotartama(),fuvarok.getHibasakTeljesBevetele());
 
 
     }

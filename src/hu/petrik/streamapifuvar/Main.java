@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Fuvarok fuvarok = new Fuvarok("fuvar.csv");
 
-        System.out.println(fuvarok);
+        //System.out.println(fuvarok);
 
         System.out.printf("1. feladat: %d utazás került feljegyzésre az állományban!\n", fuvarok.getUtazasokSzama());
         System.out.printf("2. feladat: A 6185-ös azonosítójú taxis fuvarainak száma: %d és bevételeinek száma %f !\n",fuvarok.fuvarokSzamaIdAlapjan(6185),

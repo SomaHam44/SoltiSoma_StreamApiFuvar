@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Fuvarok {
@@ -100,6 +101,14 @@ public class Fuvarok {
     public boolean szerepelE(int id) {
         return this.fuvarok.stream()
                 .anyMatch(fuvar -> fuvar.getTaxiId() == id);
+    }
+
+    public List<Fuvar> getIdobenLegrovidebbUtazasok(int szam) {
+        return this.fuvarok.stream()
+                .filter(fuvar -> fuvar.getIdotartam() > 0)
+                .sorted(Comparator.comparingInt(fuvar -> fuvar.getIdotartam()))
+                .limit(szam)
+                .collect(Collectors.toList());
     }
 
     @Override

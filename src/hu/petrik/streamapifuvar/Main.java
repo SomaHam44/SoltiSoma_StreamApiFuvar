@@ -17,6 +17,10 @@ public class Main {
         System.out.printf("7. feladat: Hibás adatok száma: %d, összes időtartama: %d , teljes bevétele: %f \n",fuvarok.getHibasakSzama(),
                 fuvarok.getHibasakOsszesIdotartama(),fuvarok.getHibasakTeljesBevetele());
         System.out.println("8. feladat: 1452-es azonosítójú taxi szerepel az adatok között:  " + (fuvarok.szerepelE(1452)? "Igen" : "Nem") );
+        System.out.println("9. feladat: A 3 időben legrövidebb utazás adatai: ");
+        for (Fuvar fuvar: fuvarok.getIdobenLegrovidebbUtazasok(3)) {
+            System.out.println(fuvar);
+        }
 
 
     }

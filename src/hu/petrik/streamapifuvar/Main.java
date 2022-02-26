@@ -16,6 +16,7 @@ public class Main {
         System.out.println("6. feladat: A 4261-es azonosítójú taxis megtett kilométereinek száma: " + fuvarok.getKilometerekSzamaIdAlapjan(4261));
         System.out.printf("7. feladat: Hibás adatok száma: %d, összes időtartama: %d , teljes bevétele: %f \n",fuvarok.getHibasakSzama(),
                 fuvarok.getHibasakOsszesIdotartama(),fuvarok.getHibasakTeljesBevetele());
+        System.out.println("8. feladat: 1452-es azonosítójú taxi szerepel az adatok között:  " + (fuvarok.szerepelE(1452)? "Igen" : "Nem") );
 
 
     }

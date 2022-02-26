@@ -97,6 +97,11 @@ public class Fuvarok {
                 .sum();
     }
 
+    public boolean szerepelE(int id) {
+        return this.fuvarok.stream()
+                .anyMatch(fuvar -> fuvar.getTaxiId() == id);
+    }
+
     @Override
     public String toString() {
         String s = "";

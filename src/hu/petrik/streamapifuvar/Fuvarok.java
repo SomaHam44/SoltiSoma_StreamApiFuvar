@@ -111,6 +111,20 @@ public class Fuvarok {
                 .collect(Collectors.toList());
     }
 
+    public long getFuvarokSzamaHonapNapStringSzerint(String honap,String nap) {
+        return this.fuvarok.stream()
+                .filter(fuvar ->  fuvar.getIndulas().contains(honap) &&fuvar.getIndulas().contains(nap))
+                .count();
+    }
+
+    public double getBorravaloAranyaHonapNapStringSzerint(String honap, String nap) {
+        return this.fuvarok.stream()
+                .filter(fuvar ->  fuvar.getIndulas().contains(honap) &&fuvar.getIndulas().contains(nap))
+                .mapToDouble(F -> F.getBokezuseg())
+                .sum();
+
+    }
+
     @Override
     public String toString() {
         String s = "";

@@ -21,6 +21,8 @@ public class Main {
         for (Fuvar fuvar: fuvarok.getIdobenLegrovidebbUtazasok(3)) {
             System.out.println(fuvar);
         }
+        System.out.println("10. feladat: December 24-ei fuvarok száma: " + fuvarok.getFuvarokSzamaHonapNapStringSzerint("-12-","-24"));
+        System.out.println("11. feladat: December 31-én borravalók aránya: " + fuvarok.getBorravaloAranyaHonapNapStringSzerint("-12-","-31"));
 
 
     }

@@ -35,19 +35,45 @@ public class Fuvarok {
     }
 
     public long getUtazasokSzama() {
-        return fuvarok.stream().count();
+        return this.fuvarok.stream().count();
+    }
+
+    public long fuvarokSzamaIdAlapjan(int id) {
+        return this.fuvarok.stream()
+                .filter(fuvar -> fuvar.getTaxiId() == id).count();
+    }
+
+    public double getBevetelekSzamaIdAlapjan(int id) {
+        return this.fuvarok.stream().
+                filter(fuvar -> fuvar.getTaxiId() == id)
+                .mapToDouble(F -> F.getBevetel())
+                .sum();
     }
 
     public double getOsszesMerfold() {
-        return fuvarok.stream()
+        return this.fuvarok.stream()
                 .mapToDouble(F -> F.getTavolsag())
                 .sum();
     }
 
     public Fuvar getLeghosszabbFuvar() {
-        return fuvarok.stream()
+        return this.fuvarok.stream()
                 .max(Comparator.comparing(fuvar -> fuvar.getIdotartam()))
                 .get();
+    }
+
+    public Fuvar getLegbokezubbFuvar() {
+        return this.fuvarok.stream()
+                .max(Comparator.comparingDouble(fuvar -> fuvar.getBokezuseg()))
+                .get();
+    }
+
+    public double getKilometerekSzamaIdAlapjan(int id) {
+        return this.fuvarok.stream()
+                .filter(fuvar -> fuvar.getTaxiId() == id)
+                .mapToDouble(F -> F.getKilometerekSzama())
+                .sum();
+
     }
 
     @Override
@@ -58,4 +84,7 @@ public class Fuvarok {
         }
         return s;
     }
+
+
+
 }

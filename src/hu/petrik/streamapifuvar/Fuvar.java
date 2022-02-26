@@ -79,6 +79,19 @@ public class Fuvar {
         this.fizetesModja = adatok[6];
     }
 
+    public double getBokezuseg() {
+        return this.borravalo / this.viteldij;
+    }
+
+    public double getBevetel() {
+        return this.borravalo + this.viteldij;
+    }
+
+    public double getKilometerekSzama() {
+        return this.tavolsag * 1.6;
+
+    }
+
     @Override
     public String toString() {
         return String.format("%10s %10d %9d %10f %10f %10f %15s", this.indulas, this.taxiId,

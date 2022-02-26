@@ -7,10 +7,13 @@ public class Main {
 
         System.out.println(fuvarok);
 
-        System.out.printf("1. feladat:  %d utazás került feljegyzésre az állományban!\n", fuvarok.getUtazasokSzama());
-        System.out.println("2. feladat: ");
+        System.out.printf("1. feladat: %d utazás került feljegyzésre az állományban!\n", fuvarok.getUtazasokSzama());
+        System.out.printf("2. feladat: A 6185-ös azonosítójú taxis fuvarainak száma: %d és bevételeinek száma %f !\n",fuvarok.fuvarokSzamaIdAlapjan(6185),
+                fuvarok.getBevetelekSzamaIdAlapjan(6185));
         System.out.printf("3. feladat: %f mérföldet tettek meg a taxisok!\n", fuvarok.getOsszesMerfold());
         System.out.println("4. feladat: Az időben leghosszabb fuvar adatai: " + fuvarok.getLeghosszabbFuvar());
+        System.out.println("5. feladat: A legbőkezűbb fuvar adatai: " + fuvarok.getLegbokezubbFuvar());
+        System.out.println("6. feladat: A 4261-es azonosítójú taxis megtett kilométereinek száma: " + fuvarok.getKilometerekSzamaIdAlapjan(4261));
 
 
     }
